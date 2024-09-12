@@ -1,0 +1,21 @@
+{
+  "name": "PPG_framework",
+  "version": "1.2.0",
+  "summary": "PushPushGo framework",
+  "description": "PushPushGo framework description",
+  "homepage": "https://pushpushgo.com/pl/",
+  "license": "MIT",
+  "authors": {
+    "": "adam.majczyk@goodylabs.com"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "git@github.com:ppgco/ios-sdk.git",
+    "tag": "1.2.0"
+  },
+  "source_files": "PPG_framework/PPG_framework/**/*.{h,m,swift}",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

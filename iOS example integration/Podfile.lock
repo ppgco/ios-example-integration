@@ -1,0 +1,21 @@
+PODS:
+  - PPG_framework (1.2.0)
+
+DEPENDENCIES:
+  - PPG_framework (from `https://github.com/ppgco/ios-sdk`)
+
+EXTERNAL SOURCES:
+  PPG_framework:
+    :git: https://github.com/ppgco/ios-sdk
+
+CHECKOUT OPTIONS:
+  PPG_framework:
+    :commit: e2a17d3f71edf8d5cc6b93375828b5a47898b4a1
+    :git: https://github.com/ppgco/ios-sdk
+
+SPEC CHECKSUMS:
+  PPG_framework: 8fb3b0bf101b73d38518fe41d3cb95d52a1dd53a
+
+PODFILE CHECKSUM: 7527dfcb825e6dbb3b7b43782ef030593daa4076
+
+COCOAPODS: 1.15.2

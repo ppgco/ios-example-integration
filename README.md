@@ -9,13 +9,14 @@ Repository contains complete APP integrated with PPG iOS native sdk.
 
 ## Installation
 1. Generate certificate and upload it - https://docs.pushpushgo.company/application/providers/mobile-push/apns
-2. Provide PPG credentials in AppDelegate.swift - project id and api key
+2. Clone repo and open project by iOS example integration.xcworkspace file
+3. Provide PPG credentials in AppDelegate.swift - project id and api key
 
 ```swift
         // Initialize PPG
         PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
 ```
-3. Build and run APP
+4. Build and run APP
 
 ## Functionalities
 

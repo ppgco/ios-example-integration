@@ -13,10 +13,10 @@ Repository contains complete APP integrated with PPG iOS native sdk.
 2. Clone repo and open project by iOS example integration.xcworkspace file
 3. Provide PPG credentials in AppDelegate.swift - project id and api key
 
-```swift
-        // Initialize PPG
-        PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
-```
+   ```swift
+           // Initialize PPG
+           PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
+   ```
 4. In root folder of your iOS APP run:
    ```bash
    $ pod install

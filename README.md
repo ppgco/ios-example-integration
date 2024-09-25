@@ -17,7 +17,11 @@ Repository contains complete APP integrated with PPG iOS native sdk.
         // Initialize PPG
         PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
 ```
-4. Build and run APP
+4. In root folder of your iOS APP run:
+   ```bash
+   $ pod install
+   ```
+6. Build and run APP
 
 ## Functionalities
 

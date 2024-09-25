@@ -7,6 +7,13 @@ Example of integration PPG ios sdk with SwiftUI iOS application
 Repository contains complete APP integrated with PPG iOS native sdk.
 **To run APP you need to provide Project ID and API KEY from PPG application panel. You also need to upload APSN certificate.**
 
+## Requirements
+- Access to Apple Developers console
+- PPG project
+- Cocoapods (or other package manager)
+  
+  Approximate time of installation to run app - 15 min
+
 ## Installation
 1. Generate certificate and upload it - https://docs.pushpushgo.company/application/providers/mobile-push/apns
     **IMPORTANT** - While generating certificate, you should provide the same bundle ID as it is provided in Xcode.

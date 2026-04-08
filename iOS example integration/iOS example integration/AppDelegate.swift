@@ -11,11 +11,15 @@ import UserNotifications
 import PPG_framework
 import PPG_InAppMessages
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         // Initialize PPG Push Notifications
-        PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
+        PPG.initializeNotifications(
+            projectId: "YOUR PROJECT ID",
+            apiToken: "YOUR API KEY",
+            appGroupId: "YOUR APP GROUP ID"
+        )
         
         // Initialize PPG In-App Messages
         InAppMessagesSDK.shared.initialize(
@@ -35,7 +39,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
         }
         
-        UNUserNotificationCenter.current().delegate = self
+        PPGUserNotificationCenterDelegateSetUp()
         
         return true
     }
@@ -51,27 +55,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         PPG.sendDeviceToken(deviceToken) { _ in }
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
-              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        // Display notification when app is in foreground, optional
-        completionHandler([.banner, .badge, .sound])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
-        // Send information about clicked notification to framework
-        PPG.notificationClicked(response: response)
-
-        // Open external link from push notification
-        // Remove this section if this behavior is not expected
-        guard let url = PPG.getUrlFromNotificationResponse(response: response)
-            else {
-                completionHandler()
-                return
-            }
-        UIApplication.shared.open(url)
-        //
-        completionHandler()
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        PPGdidReceiveRemoteNotification(userInfo, completionHandler: completionHandler)
     }
 }

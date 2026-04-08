@@ -11,6 +11,7 @@
 		3146B44B9C0098B556B1470B /* Pods_iOS_example_integration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C621110FD275BD714E120C8 /* Pods_iOS_example_integration.framework */; };
 		853ABC7762CF3668C2BDC7F2 /* Pods_iOS_example_integration_iOS_example_integrationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8CFBB219BA773B32B29235 /* Pods_iOS_example_integration_iOS_example_integrationUITests.framework */; };
 		A8B515C77B6D0A3562BC5C64 /* Pods_iOS_example_integrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B4BC1A75DCDEED6FEBEBF /* Pods_iOS_example_integrationTests.framework */; };
+		AA000001AA000001AA000001 /* InAppMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AA000002AA000002 /* InAppMessagesView.swift */; };
 		E53161D02C92D33F00089B1B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53161CF2C92D33F00089B1B /* NotificationService.swift */; };
 		E53161D42C92D33F00089B1B /* PPGNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E53161CD2C92D33F00089B1B /* PPGNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E587B6D72C91AFFA00DB4443 /* PPG_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E587B6D62C91AFFA00DB4443 /* PPG_framework.framework */; };
@@ -24,7 +25,6 @@
 		E5B77EB82C7762FB00EA5E3D /* iOS_example_integrationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B77EB72C7762FB00EA5E3D /* iOS_example_integrationUITestsLaunchTests.swift */; };
 		E5B77EC52C7773A900EA5E3D /* ButtonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B77EC42C7773A900EA5E3D /* ButtonsViewModel.swift */; };
 		E5CB14CC2C92EEA800A1D9C6 /* BeaconCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB14CB2C92EEA800A1D9C6 /* BeaconCardView.swift */; };
-		AA000001AA000001AA000001 /* InAppMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002AA000002AA000002 /* InAppMessagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +74,7 @@
 		81CC7223A06E2F28202088E4 /* Pods-iOS example integration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS example integration.release.xcconfig"; path = "Target Support Files/Pods-iOS example integration/Pods-iOS example integration.release.xcconfig"; sourceTree = "<group>"; };
 		87D2D0B1C9E4572D25A4A0C1 /* Pods_PPGNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PPGNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C621110FD275BD714E120C8 /* Pods_iOS_example_integration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_example_integration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000002AA000002AA000002 /* InAppMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessagesView.swift; sourceTree = "<group>"; };
 		AADCD8B941C2CCDB656D4DF9 /* Pods-PPGNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PPGNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-PPGNotificationServiceExtension/Pods-PPGNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		BE5F906255CF81DD38C09122 /* Pods-iOS example integrationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS example integrationTests.release.xcconfig"; path = "Target Support Files/Pods-iOS example integrationTests/Pods-iOS example integrationTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF8CFBB219BA773B32B29235 /* Pods_iOS_example_integration_iOS_example_integrationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_example_integration_iOS_example_integrationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +88,7 @@
 		E53161D12C92D33F00089B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E587B6D62C91AFFA00DB4443 /* PPG_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PPG_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E587B6D82C91D1E100DB4443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5AE5E342F866CFA00F5F459 /* PPGNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PPGNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		E5B77E972C7762F900EA5E3D /* iOS example integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS example integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B77E9A2C7762F900EA5E3D /* iOS_example_integrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_example_integrationApp.swift; sourceTree = "<group>"; };
 		E5B77E9C2C7762F900EA5E3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,7 +101,6 @@
 		E5B77EB72C7762FB00EA5E3D /* iOS_example_integrationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_example_integrationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E5B77EC42C7773A900EA5E3D /* ButtonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsViewModel.swift; sourceTree = "<group>"; };
 		E5CB14CB2C92EEA800A1D9C6 /* BeaconCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCardView.swift; sourceTree = "<group>"; };
-		AA000002AA000002AA000002 /* InAppMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +172,7 @@
 		E53161CE2C92D33F00089B1B /* PPGNotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
+				E5AE5E342F866CFA00F5F459 /* PPGNotificationServiceExtension.entitlements */,
 				E53161CF2C92D33F00089B1B /* NotificationService.swift */,
 				E53161D12C92D33F00089B1B /* Info.plist */,
 			);
@@ -593,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3EC296C6429F01F333B52FF /* Pods-PPGNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PPGNotificationServiceExtension/PPGNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PH89S8YQM;
@@ -621,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AADCD8B941C2CCDB656D4DF9 /* Pods-PPGNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PPGNotificationServiceExtension/PPGNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PH89S8YQM;

@@ -1,21 +1,22 @@
 {
   "name": "PPG_framework",
-  "version": "1.2.0",
-  "summary": "PushPushGo framework",
-  "description": "PushPushGo framework description",
+  "version": "4.2.0",
+  "summary": "PushPushGo SDK for iOS.",
+  "description": "The PushPushGo SDK allows easy integration of push notification services for iOS applications.",
   "homepage": "https://pushpushgo.com/pl/",
   "license": "MIT",
   "authors": {
-    "": "adam.majczyk@goodylabs.com"
+    "Adam": "adam@pushpushgo.com",
+    "Mateusz": "mateusz@pushpushgo.com"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
   "source": {
-    "git": "git@github.com:ppgco/ios-sdk.git",
-    "tag": "1.2.0"
+    "git": "https://github.com/ppgco/ios-sdk.git",
+    "tag": "4.2.0"
   },
-  "source_files": "PPG_framework/PPG_framework/**/*.{h,m,swift}",
-  "swift_versions": "5.0",
-  "swift_version": "5.0"
+  "swift_versions": "5.3",
+  "source_files": "Sources/PPG_framework/**/*.{h,m,swift}",
+  "swift_version": "5.3"
 }

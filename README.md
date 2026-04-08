@@ -37,7 +37,7 @@ Repository contains a complete app integrated with the PPG iOS native SDK.
 4. Set your PPG credentials in `AppDelegate.swift`:
    ```swift
    // Push Notifications
-   PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
+   PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY", appGroupId: "YOUR APP GROUP ID")
 
    // In-App Messages
    InAppMessagesSDK.shared.initialize(apiKey: "YOUR API KEY", projectId: "YOUR PROJECT ID")

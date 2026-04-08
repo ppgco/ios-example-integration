@@ -8,58 +8,90 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ButtonsViewModel()
-    @State private var showBeaconCard = false
-    
     var body: some View {
-        VStack(spacing: 20) {
-            Button(action: {
-                viewModel.sendBeacon()
-                showBeaconCard = true
-            }) {
-                Text("Send Beacon")
-                    .font(.headline)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+        TabView {
+            NavigationStack {
+                PushNotificationsView()
             }
-            
-            // Conditionally display the card
-            if showBeaconCard {
-                BeaconCardView(viewModel: viewModel, showBeaconCard: $showBeaconCard)
+            .tabItem {
+                Label("Push", systemImage: "bell")
             }
-            
-            Button(action: {
-                viewModel.unregisterSubscriber()
-            }) {
-                Text("Unregister")
-                    .font(.headline)
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: 50)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+
+            NavigationStack {
+                InAppMessagesView()
             }
-            
-            Button(action: {
-                viewModel.getSubscriberId()
-            }) {
-                Text("SubscriberID")
-                    .font(.headline)
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: 50)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            
-            if !viewModel.message.isEmpty {
-                Text(viewModel.message)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .padding(.top, 20)
+            .tabItem {
+                Label("In-App", systemImage: "message")
             }
         }
-        .padding()
+    }
+}
+
+struct PushNotificationsView: View {
+    @StateObject private var viewModel = ButtonsViewModel()
+    @State private var showBeaconSheet = false
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+
+                // Subscriber
+                GroupBox(label: Label("Subscriber", systemImage: "person.crop.circle")) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Show the current PPG subscriber ID or unsubscribe this device from push notifications.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+
+                        Button(action: { viewModel.getSubscriberId() }) {
+                            Label("Show Subscriber ID", systemImage: "person.badge.key.fill")
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                        }
+                        .buttonStyle(.borderedProminent)
+
+                        Button(action: { viewModel.unregisterSubscriber() }) {
+                            Label("Unregister", systemImage: "person.crop.circle.badge.minus")
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                    }
+                    .padding(.top, 4)
+                }
+
+                // Beacon
+                GroupBox(label: Label("Beacon", systemImage: "antenna.radiowaves.left.and.right")) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Send a beacon event with a custom tag, label and TTL to the PPG platform.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+
+                        Button(action: { showBeaconSheet = true }) {
+                            Label("Send Beacon", systemImage: "paperplane.fill")
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.green)
+                    }
+                    .padding(.top, 4)
+                }
+
+                if !viewModel.message.isEmpty {
+                    Text(viewModel.message)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .padding(.top, 4)
+                }
+            }
+            .padding()
+        }
+        .navigationTitle("Push Notifications")
+        .sheet(isPresented: $showBeaconSheet) {
+            NavigationStack {
+                BeaconCardView(viewModel: viewModel, showBeaconCard: $showBeaconSheet)
+                    .navigationTitle("Send Beacon")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+        }
     }
 }
 

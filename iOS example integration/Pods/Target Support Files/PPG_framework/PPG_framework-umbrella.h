@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#include <PPG_framework/PPG_framework.h>
+#import "PPG_framework.h"
 
 FOUNDATION_EXPORT double PPG_frameworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char PPG_frameworkVersionString[];

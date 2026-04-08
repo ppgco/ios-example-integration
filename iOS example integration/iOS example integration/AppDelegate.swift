@@ -9,12 +9,19 @@ import Foundation
 import UIKit
 import UserNotifications
 import PPG_framework
+import PPG_InAppMessages
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        // Initialize PPG
+        // Initialize PPG Push Notifications
         PPG.initializeNotifications(projectId: "YOUR PROJECT ID", apiToken: "YOUR API KEY")
+        
+        // Initialize PPG In-App Messages
+        InAppMessagesSDK.shared.initialize(
+            apiKey: "YOUR API KEY",
+            projectId: "YOUR PROJECT ID"
+        )
         
         // Register for notifications
         PPG.registerForNotifications(application: application) { result in

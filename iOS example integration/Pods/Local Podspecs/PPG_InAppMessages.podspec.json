@@ -1,0 +1,32 @@
+{
+  "name": "PPG_InAppMessages",
+  "version": "4.2.1",
+  "summary": "PushPushGo In-App Messages SDK for iOS.",
+  "description": "The PushPushGo In-App Messages SDK allows easy integration of in-app messaging services for iOS applications.\nFeatures include audience targeting, custom triggers, and seamless integration with push notifications.",
+  "homepage": "https://pushpushgo.com/pl/",
+  "license": "MIT",
+  "authors": {
+    "Adam": "adam@pushpushgo.com",
+    "Mateusz": "mateusz@pushpushgo.com"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source": {
+    "git": "https://github.com/ppgco/ios-sdk.git",
+    "tag": "4.2.1"
+  },
+  "swift_versions": "5.3",
+  "source_files": "Sources/PPG_InAppMessages/**/*.{h,m,swift}",
+  "resource_bundles": {
+    "PPG_InAppMessages": [
+      "Sources/PPG_InAppMessages/Resources/**/*.ttf"
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "WebKit",
+    "Foundation"
+  ],
+  "swift_version": "5.3"
+}

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-iOS example integration/Pods-iOS example integration-frameworks.sh
+${BUILT_PRODUCTS_DIR}/PPG_InAppMessages/PPG_InAppMessages.framework
 ${BUILT_PRODUCTS_DIR}/PPG_framework/PPG_framework.framework

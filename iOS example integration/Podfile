@@ -8,8 +8,10 @@ target 'iOS example integration' do
   # Pods for iOS example integration
   
   pod 'PPG_framework', :git => 'https://github.com/ppgco/ios-sdk'
+  pod 'PPG_InAppMessages', :git => 'https://github.com/ppgco/ios-sdk'
   
   target 'PPGNotificationServiceExtension' do
+    inherit! :search_paths
     
     pod 'PPG_framework', :git => 'https://github.com/ppgco/ios-sdk'
   end

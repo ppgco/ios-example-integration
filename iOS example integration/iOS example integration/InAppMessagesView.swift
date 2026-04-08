@@ -13,9 +13,11 @@ struct InAppMessagesView: View {
     @State private var triggerKey: String = "action"
     @State private var triggerValue: String = "button_clicked"
     @State private var statusMessage: String = ""
+    @FocusState private var focusedField: Bool
 
     var body: some View {
         ScrollView {
+
             VStack(alignment: .leading, spacing: 24) {
 
                 // Route Simulation
@@ -29,6 +31,7 @@ struct InAppMessagesView: View {
                             .textFieldStyle(.roundedBorder)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
+                            .focused($focusedField)
 
                         Button(action: simulateRouteChange) {
                             Label("Set Route", systemImage: "arrow.right.circle.fill")
@@ -50,11 +53,13 @@ struct InAppMessagesView: View {
                             .textFieldStyle(.roundedBorder)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
+                            .focused($focusedField)
 
                         TextField("Value (e.g. purchase_complete)", text: $triggerValue)
                             .textFieldStyle(.roundedBorder)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
+                            .focused($focusedField)
 
                         Button(action: fireCustomTrigger) {
                             Label("Fire Trigger", systemImage: "bolt.fill")
@@ -92,6 +97,13 @@ struct InAppMessagesView: View {
                 }
             }
             .padding()
+        }
+        .scrollDismissesKeyboard(.immediately)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { focusedField = false }
+            }
         }
         .navigationTitle("In-App Messages")
         .onAppear {

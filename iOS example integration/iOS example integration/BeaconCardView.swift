@@ -15,6 +15,7 @@ struct BeaconCardView: View {
     @State private var tag: String = ""
     @State private var label: String = ""
     @State private var ttl: String = ""
+    @FocusState private var focusedField: Bool
 
     var body: some View {
         VStack(spacing: 20) {
@@ -23,17 +24,20 @@ struct BeaconCardView: View {
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
+                .focused($focusedField)
             
             TextField("Enter label", text: $label)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
+                .focused($focusedField)
             
             TextField("Enter ttl", text: $ttl)
                 .keyboardType(.numberPad)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
+                .focused($focusedField)
             
             HStack(spacing: 20) {
                 // Send button
@@ -66,5 +70,11 @@ struct BeaconCardView: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { focusedField = false }
+            }
+        }
     }
 }

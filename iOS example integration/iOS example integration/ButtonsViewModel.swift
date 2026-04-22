@@ -18,9 +18,10 @@ class ButtonsViewModel: ObservableObject {
         message = "Send Beacon button clicked"
     }
     
-    func sendBeaconWithData(tag: String, label: String, ttl: Int) {
+    func sendBeaconWithData(tag: String, label: String, ttl: Int, customId: String) {
         let beacon = Beacon()
         beacon.appendTag(tag, label, Int64(ttl))
+        beacon.customId = customId
         beacon.send() { result in
             DispatchQueue.main.async {
                 self.message = "Beacon sent. Status: \(result)"

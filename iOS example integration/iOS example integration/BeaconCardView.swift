@@ -15,34 +15,55 @@ struct BeaconCardView: View {
     @State private var tag: String = ""
     @State private var label: String = ""
     @State private var ttl: String = ""
+    @State private var customId: String = ""
     @FocusState private var focusedField: Bool
 
     var body: some View {
-        VStack(spacing: 20) {
-            // Text input fields
-            TextField("Enter tag", text: $tag)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .focused($focusedField)
+        VStack(spacing: 30) {
+            VStack(spacing: 10) {
+                Text("Labels")
+                    .font(Font.headline)
+                    .bold(true)
+                    .foregroundStyle(Color(.label))
+                
+                // Text input fields
+                TextField("Enter tag", text: $tag)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .focused($focusedField)
+                
+                TextField("Enter label", text: $label)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .focused($focusedField)
+                
+                TextField("Enter ttl", text: $ttl)
+                    .keyboardType(.numberPad)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .focused($focusedField)
+            }
             
-            TextField("Enter label", text: $label)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .focused($focusedField)
-            
-            TextField("Enter ttl", text: $ttl)
-                .keyboardType(.numberPad)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .focused($focusedField)
+            VStack(spacing: 10){
+                Text("Custom ID")
+                    .font(Font.headline)
+                    .bold(true)
+                    .foregroundStyle(Color(.label))
+                
+                TextField("Enter custom ID", text: $customId)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .focused($focusedField)
+            }
             
             HStack(spacing: 20) {
                 // Send button
                 Button(action: {
-                    viewModel.sendBeaconWithData(tag: tag, label: label, ttl: Int(ttl) ?? 0)
+                    viewModel.sendBeaconWithData(tag: tag, label: label, ttl: Int(ttl) ?? 0, customId: customId)
                     showBeaconCard = false
                 }) {
                     Text("Send")

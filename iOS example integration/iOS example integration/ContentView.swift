@@ -23,6 +23,13 @@ struct ContentView: View {
             .tabItem {
                 Label("In-App", systemImage: "message")
             }
+
+            NavigationStack {
+                LiveActivitiesView()
+            }
+            .tabItem {
+                Label("Live", systemImage: "sportscourt")
+            }
         }
     }
 }

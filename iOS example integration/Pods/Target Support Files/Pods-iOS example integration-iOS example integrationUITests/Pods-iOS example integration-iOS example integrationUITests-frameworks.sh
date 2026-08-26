@@ -177,10 +177,12 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PPG_InAppMessages/PPG_InAppMessages.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PPG_LiveActivities/PPG_LiveActivities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PPG_framework/PPG_framework.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/PPG_InAppMessages/PPG_InAppMessages.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PPG_LiveActivities/PPG_LiveActivities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PPG_framework/PPG_framework.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

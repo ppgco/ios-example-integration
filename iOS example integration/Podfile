@@ -9,11 +9,19 @@ target 'iOS example integration' do
   
   pod 'PPG_framework', :git => 'https://github.com/ppgco/ios-sdk'
   pod 'PPG_InAppMessages', :git => 'https://github.com/ppgco/ios-sdk'
+  pod 'PPG_LiveActivities', :git => 'https://github.com/ppgco/ios-sdk'
   
   target 'PPGNotificationServiceExtension' do
     inherit! :search_paths
     
     pod 'PPG_framework', :git => 'https://github.com/ppgco/ios-sdk'
+  end
+
+  # Widget Extension rendering the Live Activity (Lock Screen + Dynamic Island)
+  target 'MatchWidget' do
+    inherit! :search_paths
+
+    pod 'PPG_LiveActivities', :git => 'https://github.com/ppgco/ios-sdk'
   end
 
   target 'iOS example integrationTests' do

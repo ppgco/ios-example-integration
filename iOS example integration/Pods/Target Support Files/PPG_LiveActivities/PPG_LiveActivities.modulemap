@@ -1,0 +1,6 @@
+framework module PPG_LiveActivities {
+  umbrella header "PPG_LiveActivities-umbrella.h"
+
+  export *
+  module * { export * }
+}

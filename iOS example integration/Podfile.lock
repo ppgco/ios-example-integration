@@ -1,15 +1,19 @@
 PODS:
   - PPG_framework (4.2.0)
   - PPG_InAppMessages (4.2.1)
+  - PPG_LiveActivities (4.4.0)
 
 DEPENDENCIES:
   - PPG_framework (from `https://github.com/ppgco/ios-sdk`)
   - PPG_InAppMessages (from `https://github.com/ppgco/ios-sdk`)
+  - PPG_LiveActivities (from `https://github.com/ppgco/ios-sdk`)
 
 EXTERNAL SOURCES:
   PPG_framework:
     :git: https://github.com/ppgco/ios-sdk
   PPG_InAppMessages:
+    :git: https://github.com/ppgco/ios-sdk
+  PPG_LiveActivities:
     :git: https://github.com/ppgco/ios-sdk
 
 CHECKOUT OPTIONS:
@@ -19,11 +23,15 @@ CHECKOUT OPTIONS:
   PPG_InAppMessages:
     :commit: 44ec2ff519cc0f68275ccf8d4424de83dd58a6fc
     :git: https://github.com/ppgco/ios-sdk
+  PPG_LiveActivities:
+    :commit: 6f2caa4cb5d03a78d504e4694c712df88445eb61
+    :git: https://github.com/ppgco/ios-sdk
 
 SPEC CHECKSUMS:
   PPG_framework: c104e798edb9ab3b35e9c40ef95f5715afefa0c3
   PPG_InAppMessages: bbb92d608a3322c7cf44459443f361a15d56d001
+  PPG_LiveActivities: 31e705b821e2eb949c99a1eda704701419608b76
 
-PODFILE CHECKSUM: 47b7a603ad8b4750e82f802ccc6e62e7b9ee6a85
+PODFILE CHECKSUM: fc7466e8a2f9cb0fec02ce6388aef7b295fe6a7b
 
 COCOAPODS: 1.16.2

@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 import PPG_framework
 import PPG_InAppMessages
+import PPG_LiveActivities
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -26,6 +27,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             apiKey: "YOUR API KEY",
             projectId: "YOUR PROJECT ID"
         )
+        
+        // Initialize PPG Live Activities (iOS 17.2+)
+        // The App Group id must match the one enabled on both the app and the
+        // MatchWidget extension — the widget reads badges and design from it.
+        if #available(iOS 17.2, *) {
+            LiveActivitiesSDK.shared.initialize(
+                apiKey: "YOUR APP GROUP ID",
+                projectId: "YOUR APP GROUP ID",
+                appGroupId: "YOUR APP GROUP ID",
+                isDebug: true
+            )
+        }
         
         // Register for notifications
         PPG.registerForNotifications(application: application) { result in

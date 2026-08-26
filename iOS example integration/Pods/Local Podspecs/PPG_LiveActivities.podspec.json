@@ -1,0 +1,29 @@
+{
+  "name": "PPG_LiveActivities",
+  "version": "4.4.0",
+  "summary": "PushPushGo Live Activities SDK for iOS.",
+  "description": "The PushPushGo Live Activities SDK enables real-time activity tracking on the Lock Screen\nand Dynamic Island. Includes pre-built templates (e.g., football match) and supports\ncustom templates. The pod links into apps from iOS 13.0; Live Activities themselves\nrequire iOS 17.2 at runtime and report as unsupported below it.",
+  "homepage": "https://pushpushgo.com/pl/",
+  "license": "MIT",
+  "authors": {
+    "Adam": "adam@pushpushgo.com",
+    "Mateusz": "mateusz@pushpushgo.com"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source": {
+    "git": "https://github.com/ppgco/ios-sdk.git",
+    "tag": "4.4.0"
+  },
+  "swift_versions": "5.3",
+  "source_files": "Sources/PPG_LiveActivities/**/*.{h,m,swift}",
+  "frameworks": [
+    "ActivityKit",
+    "SwiftUI",
+    "WidgetKit",
+    "Foundation",
+    "CryptoKit"
+  ],
+  "swift_version": "5.3"
+}
